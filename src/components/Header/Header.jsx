@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import { BottomBar, Container, ContentBox, ContentWrap, Logo, MenuContent, Mypage } from './Header.styled';
+import { BottomBar, Container, ContentBox, ContentWrap, Login, Logo, MenuContent, Mypage, MypageBox, NonLoginState, SignUp } from './Header.styled';
 import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const navigate = useNavigate();
+  const checkToken = localStorage.getItem('accesstoken');
   const [menuState, setMenuState] = useState('main');
   const onClickMenu = (menu) => {
     setMenuState(menu);
-    navigate(`/${menu}`);
+    if (menu === 'main') {
+      navigate('/');
+    } else {
+      navigate(`/${menu}`);
+    }
   };
 
   const isMenuActive = (name) => {
@@ -61,7 +66,29 @@ export default function Header() {
         </ContentBox>
       </ContentWrap>
 
-      <Mypage src='./sources/mypage.png' alt='mypage' />
+      {checkToken !== null ? (
+        <Mypage
+          src='./sources/mypage.png'
+          alt='mypage'
+          onClick={() => {
+            onClickMenu('mypage');
+          }}
+        />
+      ) : (
+        <div style={{ display: 'flex' }}>
+          <NonLoginState>
+            <p
+              className='login'
+              onClick={() => {
+                navigate('/login');
+              }}
+            >
+              LOGIN
+            </p>
+            <p className='signUp'>SIGN UP</p>
+          </NonLoginState>
+        </div>
+      )}
     </Container>
   );
 }

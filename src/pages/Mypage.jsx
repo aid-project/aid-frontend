@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Mainpage() {
-  return <Container>Mainpage</Container>;
+export default function Mypage() {
+  return <Container>Mypage</Container>;
 }
 
 export const Container = styled.div`

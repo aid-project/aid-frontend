@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d9d9d9;
+  background-color: #1259b3;
 `;
 
 export const ContentWrap = styled.div`
@@ -42,7 +42,7 @@ export const ContentBox = styled.div`
 export const BottomBar = styled.div`
   width: 100%;
   height: 0.3125rem;
-  background-color: ${({ menuState }) => (['main', 'how', 'community', 'draw'].includes(menuState) ? '#626262' : '#d9d9d9')};
+  background-color: ${({ menuState }) => (['main', 'how', 'community', 'draw'].includes(menuState) ? '#FFD700' : '#1259B3')};
 `;
 
 export const Logo = styled.div`
@@ -57,10 +57,10 @@ export const Logo = styled.div`
 
 export const MenuContent = styled.div`
   font-family: 'Inter';
-  font-weight: 700;
+  font-weight: ${({ menuState }) => (['main', 'how', 'community', 'draw'].includes(menuState) ? '700' : '600')};
   font-size: 1.25rem;
   line-height: 1.5rem;
-  color: ${({ menuState }) => (['main', 'how', 'community', 'draw'].includes(menuState) ? '#626262' : '#848484')};
+  color: #ffd700;
   display: flex;
   height: 4.6875rem;
   justify-content: center;
@@ -70,6 +70,24 @@ export const MenuContent = styled.div`
 export const Mypage = styled.img`
   width: 2.875rem;
   height: 2.875rem;
-  padding-right: 7.125rem;
+  margin-right: 1.125rem;
   cursor: pointer;
+  color: white;
+`;
+
+export const NonLoginState = styled.div`
+  display: flex;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #ffffff;
+
+  .login {
+    cursor: pointer;
+    margin-right: 4.5rem;
+  }
+  .signUp {
+    cursor: pointer;
+    margin-right: 6.625rem;
+  }
 `;

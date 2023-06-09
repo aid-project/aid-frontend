@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 13.125rem;
   margin-right: 0;
   height: 100%;
+  background-color: blue;
 `;
 
 export const ToolMenuBtn = styled.div`
