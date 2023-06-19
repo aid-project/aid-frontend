@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { BottomBar, Container, ContentBox, ContentWrap, Login, Logo, MenuContent, Mypage, MypageBox, NonLoginState, SignUp } from './Header.styled';
+import { BottomBar, Container, ContentBox, ContentWrap, Logo, MenuContent, Mypage, NonLoginState } from './Header.styled';
 import { useNavigate } from 'react-router-dom';
+// import Logo from './sources/logo.png';
 
 export default function Header() {
   const navigate = useNavigate();
@@ -22,12 +23,12 @@ export default function Header() {
     <Container>
       <ContentWrap>
         <Logo
+          src='./sources/logo.png'
+          alt='mypage'
           onClick={() => {
             onClickMenu('main');
           }}
-        >
-          (BRAND)
-        </Logo>
+        ></Logo>
         <ContentBox
           className='main'
           onClick={() => {
@@ -37,16 +38,8 @@ export default function Header() {
           <MenuContent menuState={isMenuActive('main') ? 'main' : 'none'}>MAIN</MenuContent>
           <BottomBar menuState={isMenuActive('main') ? 'main' : 'none'} />
         </ContentBox>
-        <ContentBox
-          className='how'
-          onClick={() => {
-            onClickMenu('how');
-          }}
-        >
-          <MenuContent menuState={isMenuActive('how') ? 'main' : 'none'}>HOW</MenuContent>
-          <BottomBar menuState={isMenuActive('how') ? 'how' : 'none'} />
-        </ContentBox>
-        <ContentBox
+
+        {/* <ContentBox
           className='community'
           onClick={() => {
             onClickMenu('community');
@@ -54,7 +47,7 @@ export default function Header() {
         >
           <MenuContent menuState={isMenuActive('community') ? 'main' : 'none'}>COMMUNITY</MenuContent>
           <BottomBar menuState={isMenuActive('community') ? 'community' : 'none'} />
-        </ContentBox>
+        </ContentBox> */}
         <ContentBox
           className='draw'
           onClick={() => {
@@ -85,7 +78,14 @@ export default function Header() {
             >
               LOGIN
             </p>
-            <p className='signUp'>SIGN UP</p>
+            <p
+              className='signUp'
+              onClick={() => {
+                navigate('/signup');
+              }}
+            >
+              SIGN UP
+            </p>
           </NonLoginState>
         </div>
       )}

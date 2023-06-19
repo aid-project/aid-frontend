@@ -1,0 +1,18 @@
+import React from 'react';
+import { Article, Container, ContentBox, Header, RandingImg, Start } from './MainpageTop.styled';
+
+export default function MainpageTop() {
+  return (
+    <Container>
+      <RandingImg src='./sources/메인페이지상단랜딩이미지.png' />
+      <ContentBox>
+        <Header>나만의 픽토그램</Header>
+        <Article>발표 자료에 넣을 나만의 그림이 필요한가요?</Article>
+        <Article>그렇다면 에이드에게 맡겨보세요!</Article>
+        <Article>간단하면 그림을 그린 후 키워드를 입력해주면 원하는 디테일까지 살려서</Article>
+        <Article>당신만의 픽토그램을 완성시켜 줍니다!</Article>
+        <Start>START {'>'}</Start>
+      </ContentBox>
+    </Container>
+  );
+}

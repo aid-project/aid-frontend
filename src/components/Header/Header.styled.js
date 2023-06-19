@@ -20,44 +20,36 @@ export const ContentBox = styled.div`
   cursor: pointer;
 
   &.main {
-    width: 5rem;
-    padding-left: 6.1875rem;
-  }
-
-  &.how {
-    width: 5rem;
-    padding-left: 2.875rem;
+    width: 7.5rem;
+    margin-left: 6.1875rem;
   }
 
   &.community {
-    padding-left: 3rem;
+    margin-left: 3rem;
   }
 
   &.draw {
-    width: 5rem;
-    padding-left: 3.5rem;
+    width: 7.5rem;
   }
 `;
 
 export const BottomBar = styled.div`
   width: 100%;
   height: 0.3125rem;
-  background-color: ${({ menuState }) => (['main', 'how', 'community', 'draw'].includes(menuState) ? '#FFD700' : '#1259B3')};
+  background-color: ${({ menuState }) => (['main', 'community', 'draw'].includes(menuState) ? '#FFD700' : '#1259B3')};
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.img`
   font-family: 'Inter';
-  padding-left: 7.8125rem;
-  font-weight: 900;
-  font-size: 2rem;
-  line-height: 2.4375rem;
-  color: #626262;
+  margin-left: 7.8125rem;
+  width: 5.2675rem;
+  height: 2.375rem;
   cursor: pointer;
 `;
 
 export const MenuContent = styled.div`
   font-family: 'Inter';
-  font-weight: ${({ menuState }) => (['main', 'how', 'community', 'draw'].includes(menuState) ? '700' : '600')};
+  font-weight: ${({ menuState }) => (['main', 'community', 'draw'].includes(menuState) ? '700' : '600')};
   font-size: 1.25rem;
   line-height: 1.5rem;
   color: #ffd700;

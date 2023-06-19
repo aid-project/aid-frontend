@@ -1,8 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import MainpageTop from '../components/Mainpage/MainpageTop';
+import MainpageBottom from '../components/Mainpage/MainpageBottom';
 
 export default function Mainpage() {
-  return <Container>Mainpage</Container>;
+  return (
+    <>
+      <MainpageTop />
+      <MainpageBottom />
+    </>
+  );
 }
 
 export const Container = styled.div`
