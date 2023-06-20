@@ -25,6 +25,8 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate('/');
+    mutateLogin(userInfo);
     console.log(e);
   };
 
@@ -70,14 +72,7 @@ export default function Login() {
             placeholder='비밀번호 입력'
           />
           <ErrorMsg>{errorMsg.password}</ErrorMsg>
-          <SignUpBtn
-            state={btnState}
-            onClick={() => {
-              navigate('/');
-            }}
-          >
-            로그인
-          </SignUpBtn>
+          <SignUpBtn state={btnState}>로그인</SignUpBtn>
           <SignUp>
             <p>아직 회원이 아니신가요?</p>
             <p
