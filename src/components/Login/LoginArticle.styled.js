@@ -121,4 +121,5 @@ export const KakaoSignUpBtn = styled.button`
   color: #000000;
   cursor: pointer;
   margin-left: 1rem;
+  margin-bottom: 9rem;
 `;

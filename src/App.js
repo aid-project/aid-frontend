@@ -11,27 +11,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-  // const [userInfo, setUserInfo] = useState({ nickname: '병민2', email: 'chobm1030@naver.com', password: '123456Aa!' });
-  // const [userLogin, setUserLogin] = useState({ email: 'chobm1030@naver.com', password: '123456Aa!' });
-  // const { mutate: mutateLogin } = useMutation(SignUp, {
-  //   onSuccess: (response) => {
-  //     console.log(response);
-  //   },
-  //   onError: (response) => {
-  //     console.log(response);
-  //   },
-  // });
-
-  // const { mutate: mutateLogin2 } = useMutation(SignIn, {
-  //   onSuccess: (response) => {
-  //     localStorage.setItem('AccessToken', response.data.token);
-  //     console.log(response);
-  //   },
-  //   onError: (response) => {
-  //     console.log(response);
-  //   },
-  // });
-
   // const { data } = useQuery(['test'], Info, {
   //   onSuccess: (response) => {
   //     console.log(response);
@@ -43,20 +22,6 @@ function App() {
 
   return (
     <>
-      {/* <button
-        onClick={() => {
-          mutateLogin(userInfo);
-        }}
-      >
-        회원가입
-      </button>
-      <button
-        onClick={() => {
-          mutateLogin2(userLogin);
-        }}
-      >
-        로그인
-      </button> */}
       <GlobalStyle />
       <Router />
     </>

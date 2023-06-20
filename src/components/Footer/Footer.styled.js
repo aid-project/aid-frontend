@@ -23,6 +23,7 @@ export const Header = styled.p`
   font-size: 1.0625rem;
   line-height: 1.3125rem;
   padding-bottom: 0.75rem;
+  cursor: default;
 `;
 
 export const Header2 = styled.p`
@@ -31,6 +32,7 @@ export const Header2 = styled.p`
   line-height: 1.3125rem;
   padding-top: 1.5rem;
   padding-bottom: 0.75rem;
+  cursor: default;
 `;
 
 export const Article = styled.p`
