@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Canvas from '../components/Draw/Canvas';
-import Export from '../components/Draw/Export';
-import Tool from '../components/Draw/Tool';
+import Canvas from '../components/Draw/Canvas/Canvas';
+
 export default function Draw() {
   return (
     <Container>
-      <Tool />
       <Canvas />
-      <Export />
     </Container>
   );
 }
