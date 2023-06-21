@@ -1,7 +1,28 @@
 import React from 'react';
 import { Container, Header, ImgBox, ImgBoxArticle, ImgBoxArticle1, ImgBoxArticle2, ImgBoxContainer, ImgBoxHeader, Number, RandingImg1, RandingImg2, RightArrow, Start } from './MainpageBottom.styled';
+import { useNavigate } from 'react-router-dom';
 
 export default function MainpageBottom() {
+  const userToken = localStorage.getItem('AccessToken');
+  const navigate = useNavigate();
+
+  const handleStart = () => {
+    if (userToken === null) {
+      navigate('/login');
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+    if (userToken !== null) {
+      navigate('/draw');
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <Container>
       <Header>How To Draw</Header>
@@ -49,7 +70,7 @@ export default function MainpageBottom() {
           </ImgBoxArticle>
         </ImgBox>
       </ImgBoxContainer>
-      <Start>START {'>'}</Start>
+      <Start onClick={handleStart}>START {'>'}</Start>
     </Container>
   );
 }
