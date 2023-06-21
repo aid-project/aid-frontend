@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bar, Btn, BtnBox, CheckIcon, Preview, SearchBar, SearchIcon, SearchInput, TagBox, TagCancel, TagItem } from './TagModal.styled';
+import { Bar, Btn, BtnBox, CheckIcon, Preview, SearchBar, SearchIcon, SearchInput, TagBox, TagCancel, TagHeader, TagItem } from './TagModal.styled';
 import { useSetRecoilState } from 'recoil';
 import { drawModalState } from '../../../store/store';
 import { useMutation } from '@tanstack/react-query';
@@ -50,14 +50,18 @@ export default function TagModal({ croppedImage, handleClose }) {
     const formData = new FormData();
     const blobTagList = new Blob([JSON.stringify(tagList)], { type: 'application/json' });
     formData.append('drawing_img', file);
-    formData.append('tag', blobTagList);
-
+    if (tagList.length === 0) {
+      formData.append('tags', '');
+    } else {
+      tagList.map((data) => formData.append('tags', data));
+    }
     mutatePictogram(formData);
   };
 
   return (
     <>
       <Preview src={croppedImage} />
+      <TagHeader>태그 추가</TagHeader>
       <SearchBar>
         <SearchIcon src='./sources/검색아이콘.png' />
         <SearchInput

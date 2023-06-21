@@ -15,14 +15,19 @@ export const BelowArrow = styled.img`
 
 export const PictogramList = styled.div`
   display: flex;
+  width: 53.9375rem;
+  justify-content: space-between;
 `;
 
-export const Pictogram = styled.div`
+export const Pictogram = styled.img`
   width: 9.5625rem;
   height: 9.5625rem;
   border: 0.0625rem solid #848484;
   border-radius: 0.375rem;
-  margin-right: 1.5625rem;
+
+  :nth-child(5) {
+    margin-right: 0rem;
+  }
 `;
 
 export const BtnBox = styled.div`

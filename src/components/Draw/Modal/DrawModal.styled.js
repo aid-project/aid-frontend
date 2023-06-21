@@ -10,7 +10,7 @@ export const ModalView = styled.div`
   width: 58.5rem;
   height: ${({ crop, tag, finish }) => {
     if (crop) return '49rem';
-    if (tag) return '51.6876rem';
+    if (tag) return '54.6876rem';
     if (finish) return '43.6875rem';
     return 'auto';
   }};

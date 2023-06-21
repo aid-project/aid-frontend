@@ -45,6 +45,8 @@ export default function Header() {
     setMenuState(menu);
     if (menu === 'main') {
       navigate('/');
+    } else if (menu === 'profile') {
+      return;
     } else {
       navigate(`/${menu}`);
     }
@@ -54,7 +56,7 @@ export default function Header() {
     return name === menuState;
   };
 
-  const { data } = useQuery(['userInfo'], userInfo, {
+  const { data: userData } = useQuery(['userInfo'], userInfo, {
     onSuccess: (response) => {
       console.log(response);
     },
@@ -115,12 +117,31 @@ export default function Header() {
                 <UserInfoBox>
                   <ProfileImg src='./sources/defaultprofile.png' />
                   <InfoColumnBox>
-                    <NickName>조병민님</NickName>
-                    <Email>chobm1027@naver.com</Email>
+                    {/* {userData?.data && (
+                      <>
+                        <NickName>{userData.data.nickname}</NickName>
+                        <Email>{userData.data.email}</Email>
+                      </>
+                    )} */}
                   </InfoColumnBox>
                 </UserInfoBox>
-                <MenuItem style={{ paddingTop: '1.125rem' }}>나의 작업</MenuItem>
-                <MenuItem>프로필 관리</MenuItem>
+                <MenuItem
+                  style={{ paddingTop: '1.125rem' }}
+                  onClick={() => {
+                    navigate('/mypage');
+                    onClickMenu('profile');
+                  }}
+                >
+                  나의 작업
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    navigate('/mypage');
+                    onClickMenu('profile');
+                  }}
+                >
+                  프로필 관리
+                </MenuItem>
                 <InfoBar />
                 <MenuItem
                   onClick={() => {

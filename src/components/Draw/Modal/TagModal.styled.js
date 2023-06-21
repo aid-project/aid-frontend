@@ -107,3 +107,12 @@ export const Btn = styled.button`
   cursor: pointer;
   margin-right: 1.5rem;
 `;
+
+export const TagHeader = styled.p`
+  align-self: flex-start;
+  padding-left: 5rem;
+  padding-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.8125rem;
+`;
