@@ -27,13 +27,11 @@ export default function Login() {
     e.preventDefault();
     navigate('/');
     mutateLogin(userInfo);
-    console.log(e);
   };
 
   const onChangeInfo = (e) => {
     if (e.target.type === 'email') setUserInfo({ ...userInfo, email: e.target.value });
     if (e.target.type === 'password') setUserInfo({ ...userInfo, password: e.target.value });
-    console.log(userInfo);
   };
 
   const { mutate: mutateLogin } = useMutation(signIn, {

@@ -12,7 +12,7 @@ export const ModalView = styled.div`
     if (crop) return '49rem';
     if (tag) return '51.6876rem';
     if (finish) return '43.6875rem';
-    return 'auto'; // Default height if none of the flags are true
+    return 'auto';
   }};
   background-color: #ffffff;
 `;

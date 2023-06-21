@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import { Color, Container, StyledColorPicker } from './ColorTool.styled';
+import { Color, ColorItem, Container, HorizonBar, StyledColorPicker, ToolBox, ToolBox2 } from './ColorTool.styled';
 import { useState } from 'react';
 
 export default function ColorTool({ color, setColor }) {
@@ -19,6 +19,34 @@ export default function ColorTool({ color, setColor }) {
           setPickerState(!pickerState);
         }}
       />
+      <HorizonBar />
+      <ToolBox>
+        <img src='./sources/Tool/spoid.png' />
+      </ToolBox>
+      <HorizonBar />
+      <ToolBox>
+        <img src='./sources/Tool/top.png' />
+      </ToolBox>
+      <ToolBox2>
+        <ColorItem />
+      </ToolBox2>
+      <ToolBox2>
+        <ColorItem />
+      </ToolBox2>
+      <ToolBox2>
+        <ColorItem />
+      </ToolBox2>
+      <ToolBox2>
+        <ColorItem />
+      </ToolBox2>
+      <ToolBox2>
+        <ColorItem />
+      </ToolBox2>
+
+      <HorizonBar />
+      <ToolBox>
+        <img src='./sources/Tool/bottom.png' />
+      </ToolBox>
     </Container>
   );
 }
